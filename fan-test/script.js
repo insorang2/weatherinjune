@@ -33,6 +33,18 @@ const questions = [
   }
 ];
 
+// 문제별 가중치
+const questionWeights = [
+  1.00,
+  1.01,
+  1.02,
+  1.04,
+  1.08,
+  1.16,
+  1.32,
+  1.64
+];
+
 let currentQuestion = -1;
 
 const memberScores = {
@@ -65,7 +77,9 @@ function goHome() {
 
 function selectChoice(choiceIndex) {
   const member = questions[currentQuestion].scores[choiceIndex];
-  memberScores[member]++;
+
+  // 문제별 가중치 적용
+  memberScores[member] += questionWeights[currentQuestion];
 
   currentQuestion++;
 
