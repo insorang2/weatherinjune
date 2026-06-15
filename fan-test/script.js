@@ -94,7 +94,6 @@ document.getElementById("app").innerHTML = ` <div style="position:relative; widt
      style="width:100%; display:block;"
    >
 
-```
   <button
     onclick="goHome()"
     style="
@@ -125,7 +124,6 @@ document.getElementById("app").innerHTML = ` <div style="position:relative; widt
   >
   </button>
 </div>
-```
 
 `;
 }
@@ -139,7 +137,6 @@ document.getElementById("app").innerHTML = ` <div style="position:relative; widt
        style="width:100%; display:block;"
      >
 
-```
     <button
       onclick="startTest()"
       style="
@@ -157,7 +154,6 @@ document.getElementById("app").innerHTML = ` <div style="position:relative; widt
   </div>
 `;
 return;
-```
 
 }
 
@@ -169,7 +165,6 @@ document.getElementById("app").innerHTML = ` <div style="position:relative; widt
      style="width:100%; display:block;"
    >
 
-```
   <button onclick="selectChoice(0)"
     style="position:absolute; left:12%; top:36%; width:76%; height:8%; background:transparent; border:none; cursor:pointer;">
   </button>
@@ -190,7 +185,7 @@ document.getElementById("app").innerHTML = ` <div style="position:relative; widt
     style="position:absolute; left:12%; top:77%; width:76%; height:8%; background:transparent; border:none; cursor:pointer;">
   </button>
 </div>
-```
+
 
 `;
 }
