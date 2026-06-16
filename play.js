@@ -6,10 +6,19 @@ document.getElementById("forPuzzle").innerHTML = `
         width:90%;
         max-width:900px;
         margin-top:30px;
+        display:none;
     "
 >
 `;
 
 document.getElementById("hintBtn").onclick = function() {
-    alert("힌트 버튼 성공!");
+
+    const image = document.getElementById("puzzleImage");
+
+    image.style.display = "block";
+
+    setTimeout(function() {
+        image.style.display = "none";
+    }, 3000);
+
 };
