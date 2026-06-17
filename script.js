@@ -146,7 +146,7 @@ function renderQuestion() {
 
 if (currentQuestion === -1) {
 document.getElementById("app").innerHTML = ` <div style="position:relative; width:100%;"> <img
-       src="home.png"
+       src="images/home.png"
        alt="홈"
        style="width:100%; display:block;"
      >
