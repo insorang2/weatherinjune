@@ -101,12 +101,14 @@ document.addEventListener("mouseup", function(){
     if(insideBoard){
 
     const targetX =
-        boardRect.left +
-        parseInt(draggedPiece.dataset.snapX);
+    boardRect.left +
+    5 +
+    parseInt(draggedPiece.dataset.snapX);
 
     const targetY =
-        boardRect.top +
-        parseInt(draggedPiece.dataset.snapY);
+    boardRect.top +
+    5 +
+    parseInt(draggedPiece.dataset.snapY);
 
     const distanceX =
         Math.abs(pieceRect.left - targetX);
