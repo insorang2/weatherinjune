@@ -45,3 +45,30 @@ image.onload = function () {
         }
     }
 };
+
+let draggedPiece = null;
+
+document.addEventListener("mousedown", function(e){
+
+    if(e.target.classList.contains("piece")){
+        draggedPiece = e.target;
+    }
+
+});
+
+document.addEventListener("mousemove", function(e){
+
+    if(!draggedPiece) return;
+
+    draggedPiece.style.position = "absolute";
+    draggedPiece.style.left = e.pageX - 30 + "px";
+    draggedPiece.style.top = e.pageY - 30 + "px";
+    draggedPiece.style.zIndex = "1000";
+
+});
+
+document.addEventListener("mouseup", function(){
+
+    draggedPiece = null;
+
+});
