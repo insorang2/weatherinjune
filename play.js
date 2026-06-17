@@ -178,14 +178,12 @@ const hintImage =
 
 hintBtn.addEventListener("click", function(){
 
-    if(hintImage.style.display === "none"){
+    hintImage.style.display = "block";
 
-        hintImage.style.display = "block";
-
-    }else{
+    setTimeout(function(){
 
         hintImage.style.display = "none";
 
-    }
+    }, 2000);
 
 });
