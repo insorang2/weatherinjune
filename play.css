@@ -19,14 +19,15 @@
 }
 
 #pieces{
-width:700px;
-margin:30px auto;
-display:flex;
-flex-wrap:wrap;
-gap:2px;
+    width:650px;
+    margin:30px auto;
+
+    display:grid;
+    grid-template-columns:repeat(10,58px);
+    gap:2px;
 }
 
 .piece{
-    border:2px solid red;
+    border:1px solid #888;
     box-sizing:border-box;
 }
