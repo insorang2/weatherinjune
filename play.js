@@ -119,25 +119,42 @@ document.addEventListener("mouseup", function(){
         parseInt(draggedPiece.dataset.correctY);
 
     const targetX =
+        board.offsetLeft +
         correctX * pieceWidth;
 
     const targetY =
+        board.offsetTop +
         correctY * pieceHeight;
 
-    draggedPiece.style.position =
-        "absolute";
+    const currentX =
+        pieceRect.left;
 
-    draggedPiece.style.left =
-        board.offsetLeft + targetX + "px";
+    const currentY =
+        pieceRect.top;
 
-    draggedPiece.style.top =
-        board.offsetTop + targetY + "px";
+    const distanceX =
+        Math.abs(currentX - targetX);
 
-    draggedPiece.style.border =
-        "2px solid lime";
+    const distanceY =
+        Math.abs(currentY - targetY);
 
-    draggedPiece.dataset.locked =
-        "true";
+    if(distanceX < 30 && distanceY < 30){
+
+        draggedPiece.style.position =
+            "absolute";
+
+        draggedPiece.style.left =
+            targetX + "px";
+
+        draggedPiece.style.top =
+            targetY + "px";
+
+        draggedPiece.style.border =
+            "2px solid lime";
+
+        draggedPiece.dataset.locked =
+            "true";
+    }
 }
 
     draggedPiece = null;
