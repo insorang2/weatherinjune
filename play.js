@@ -3,6 +3,10 @@ const piecesDiv = document.getElementById("pieces");
 const image = new Image();
 image.src = "images/puzzle.png";
 
+let draggedPiece = null;
+let offsetX = 0;
+let offsetY = 0;
+
 image.onload = function () {
 
     const rows = 10;
@@ -15,8 +19,7 @@ image.onload = function () {
 
         for(let x = 0; x < cols; x++){
 
-            const piece =
-                document.createElement("canvas");
+            const piece = document.createElement("canvas");
 
             piece.width = pieceWidth;
             piece.height = pieceHeight;
@@ -26,14 +29,7 @@ image.onload = function () {
             piece.dataset.correctX = x;
             piece.dataset.correctY = y;
 
-            piece.dataset.snapX =
-            x * pieceWidth;
-
-            piece.dataset.snapY =
-            y * pieceHeight;
-
-            const pctx =
-                piece.getContext("2d");
+            const pctx = piece.getContext("2d");
 
             pctx.drawImage(
                 image,
@@ -55,17 +51,21 @@ image.onload = function () {
     }
 };
 
-let draggedPiece = null;
-
 document.addEventListener("mousedown", function(e){
 
     if(
         e.target.classList.contains("piece") &&
         e.target.dataset.locked !== "true"
     ){
-        draggedPiece = e.target;
-    }
 
+        draggedPiece = e.target;
+
+        const rect =
+            draggedPiece.getBoundingClientRect();
+
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+    }
 });
 
 document.addEventListener("mousemove", function(e){
@@ -73,10 +73,13 @@ document.addEventListener("mousemove", function(e){
     if(!draggedPiece) return;
 
     draggedPiece.style.position = "absolute";
-    draggedPiece.style.left = e.pageX - 30 + "px";
-    draggedPiece.style.top = e.pageY - 30 + "px";
-    draggedPiece.style.zIndex = "1000";
+    draggedPiece.style.left =
+        (e.pageX - offsetX) + "px";
 
+    draggedPiece.style.top =
+        (e.pageY - offsetY) + "px";
+
+    draggedPiece.style.zIndex = "1000";
 });
 
 document.addEventListener("mouseup", function(){
@@ -100,17 +103,9 @@ document.addEventListener("mouseup", function(){
 
     if(insideBoard){
 
-    draggedPiece.style.border =
-        "2px solid lime";
-
-    board.appendChild(draggedPiece);
-
-    draggedPiece.style.position = "relative";
-    draggedPiece.style.left = "0px";
-    draggedPiece.style.top = "0px";
-
-}
+        draggedPiece.style.border =
+            "2px solid lime";
+    }
 
     draggedPiece = null;
-
 });
