@@ -49,19 +49,22 @@ function createPieces(){
             const pctx =
                 piece.getContext("2d");
 
-            pctx.drawImage(
-                image,
-                x * pieceWidth,
-                y * pieceHeight,
-                pieceWidth,
-                pieceHeight,
-                0,
-                0,
-                pieceWidth,
-                pieceHeight
-            );
+        pctx.drawImage(
+    image,
+    x * pieceWidth,
+    y * pieceHeight,
+    pieceWidth,
+    pieceHeight,
+    0,
+    0,
+    pieceWidth,
+    pieceHeight
+);
 
-            piecesDiv.appendChild(piece);
+const randomOrder = Math.random();
+piece.style.order = Math.floor(randomOrder * 1000);
+
+piecesDiv.appendChild(piece);
         }
     }
 }
