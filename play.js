@@ -121,12 +121,12 @@ document.addEventListener("mouseup", function(){
         parseInt(draggedPiece.dataset.correctY);
 
     const targetX =
-        board.offsetLeft +
-        correctX * pieceWidth;
+    boardRect.left +
+    correctX * pieceWidth;
 
-    const targetY =
-        board.offsetTop +
-        correctY * pieceHeight;
+const targetY =
+    boardRect.top +
+    correctY * pieceHeight;
 
     const currentX =
         pieceRect.left;
@@ -140,7 +140,7 @@ document.addEventListener("mouseup", function(){
     const distanceY =
         Math.abs(currentY - targetY);
 
-    if(distanceX < 30 && distanceY < 30){
+    if(distanceX < 15 && distanceY < 15){
 
         draggedPiece.style.position =
             "absolute";
