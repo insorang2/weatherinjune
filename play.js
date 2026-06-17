@@ -23,6 +23,8 @@ const cols = 10;
 const pieceWidth = image.width / cols;
 const pieceHeight = image.height / rows;
 
+console.log(pieceWidth, pieceHeight);
+
 for(let y=0; y<rows; y++){
 
     for(let x=0; x<cols; x++){
