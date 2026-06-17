@@ -5,6 +5,7 @@ document.getElementById("forPuzzle").innerHTML = `
     style="
         width:90%;
         max-width:900px;
+        margin-top:20px;
         display:none;
     "
 >
