@@ -23,6 +23,9 @@ image.onload = function () {
 
             piece.className = "piece";
 
+            piece.dataset.correctX = x;
+            piece.dataset.correctY = y;
+
             const pctx =
                 piece.getContext("2d");
 
