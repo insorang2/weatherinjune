@@ -56,6 +56,12 @@ memberScores.hansol = 0;
 }
 
 function startTest() {
+
+const bgm =
+    document.getElementById("bgm");
+
+bgm.play();
+
 resetScores();
 currentQuestion = 0;
 renderQuestion();
@@ -69,15 +75,6 @@ renderQuestion();
 
 function selectChoice(choiceIndex) {
 
-if(!musicStarted){
-
-    const bgm =
-        document.getElementById("bgm");
-
-    bgm.play();
-
-    musicStarted = true;
-}
 
 const member =
     questions[currentQuestion].scores[choiceIndex];
