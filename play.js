@@ -140,7 +140,7 @@ const currentY =
     const distanceY =
         Math.abs(currentY - targetY);
 
-    if(distanceX < 100 && distanceY < 100){
+    if(distanceX < 25 && distanceY < 25){
 
         draggedPiece.style.position =
             "absolute";
