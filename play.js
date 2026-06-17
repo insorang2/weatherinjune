@@ -159,7 +159,7 @@ document.addEventListener("mouseup", function(){
 
             completedPieces++;
 
-if(completedPieces === 100){
+if(completedPieces === 1){
 
     alert("🎉 퍼즐 완성!");
 
