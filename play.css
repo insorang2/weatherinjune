@@ -19,15 +19,14 @@
 }
 
 #pieces{
-    width:900px;
-    max-width:95%;
+    width:580px;
     margin:30px auto;
     display:flex;
     flex-wrap:wrap;
-    gap:2px;
-    justify-content:center;
+    gap:0;
 }
 
 .piece{
     border:1px solid #ccc;
+    box-sizing:border-box;
 }
