@@ -103,9 +103,42 @@ document.addEventListener("mouseup", function(){
 
     if(insideBoard){
 
-        draggedPiece.style.border =
-            "2px solid lime";
-    }
+    const cols = 10;
+    const rows = 10;
+
+    const pieceWidth =
+        board.clientWidth / cols;
+
+    const pieceHeight =
+        board.clientHeight / rows;
+
+    const correctX =
+        parseInt(draggedPiece.dataset.correctX);
+
+    const correctY =
+        parseInt(draggedPiece.dataset.correctY);
+
+    const targetX =
+        correctX * pieceWidth;
+
+    const targetY =
+        correctY * pieceHeight;
+
+    draggedPiece.style.position =
+        "absolute";
+
+    draggedPiece.style.left =
+        board.offsetLeft + targetX + "px";
+
+    draggedPiece.style.top =
+        board.offsetTop + targetY + "px";
+
+    draggedPiece.style.border =
+        "2px solid lime";
+
+    draggedPiece.dataset.locked =
+        "true";
+}
 
     draggedPiece = null;
 });
