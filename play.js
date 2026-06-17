@@ -5,8 +5,8 @@ image.src = "images/puzzle.png";
 
 image.onload = function () {
 
-    const rows = 5;
-    const cols = 5;
+    const rows = 10;
+    const cols = 10;
 
     const pieceWidth = image.width / cols;
     const pieceHeight = image.height / rows;
@@ -39,7 +39,7 @@ image.onload = function () {
             );
 
             piece.style.order =
-                Math.floor(Math.random() * 100);
+                Math.floor(Math.random() * 1000);
 
             piecesDiv.appendChild(piece);
         }
