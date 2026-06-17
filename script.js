@@ -1,4 +1,7 @@
 //test
+
+let musicStarted = false;
+
 const questions = [
 {
 image: "images/q1.png",
@@ -65,7 +68,19 @@ renderQuestion();
 }
 
 function selectChoice(choiceIndex) {
-const member = questions[currentQuestion].scores[choiceIndex];
+
+if(!musicStarted){
+
+    const bgm =
+        document.getElementById("bgm");
+
+    bgm.play();
+
+    musicStarted = true;
+}
+
+const member =
+    questions[currentQuestion].scores[choiceIndex];
 
 memberScores[member] += 1;
 
@@ -123,6 +138,7 @@ document.getElementById("app").innerHTML = ` <div style="position:relative; widt
       cursor:pointer;
     "
   >
+
   </button>
 </div>
 
